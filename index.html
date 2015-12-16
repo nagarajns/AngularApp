@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="AdminApp">
+<head>
+
+    <title>NS Admin Angular App</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <meta content="Designed By NS TechFrame" name="description"/>
+    <meta content="Nagaraja Sabhahith" name="author"/>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/angular-toaster/toaster.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+    <link id="lazyLoadPlugins" />
+
+    <!--<base href="/">-->
+</head>
+<body ng-controller="AppController">
+<toaster-container toaster-options="{'position-class':'toast-center'}"></toaster-container>
+<div ng-spinner-bar class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+</div>
+
+<div ng-show="isLoggedIn" data-ng-include="'app/tpl/header.html'" data-ng-controller="HeaderController" class="top-header"></div>
+<div ng-show="!isLoggedIn" data-ng-include="'app/tpl/header-before-login.html'" data-ng-controller="HeaderController" class="top-header"></div>
+
+<aside ng-show="isLoggedIn" data-ng-include="'app/tpl/sidebar.html'" data-ng-controller="SidebarController" class="side-menu-bar"></aside>
+
+<main class="page-content">
+    <div ui-view class="page-view"></div>
+</main>
+
+<div data-ng-include="'app/tpl/footer.html'" data-ng-controller="FooterController" class=""></div>
+
+
+
+<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="assets/plugins/materialize/js/materialize.min.js"></script>
+
+
+<script type="text/javascript" src="assets/plugins/angular/angular.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-touch.min.js"></script>
+<script type="text/javascript" src="assets/js/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="assets/js/ocLazyLoad.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular/angular-cookies.min.js"></script>
+
+
+
+<script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="assets/plugins/angular-toaster/toaster.min.js"></script>
+
+<!--<script type="text/javascript" src="assets/plugins/backstretch/jquery.backstretch.js"></script>-->
+
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/directives.js"></script>
+
+<script type="text/javascript" src="assets/js/layout.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function () {
+            Layout.init();
+        },100)
+
+    });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<nav class="top-header">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">NS ADMIN</a>
+
+        <ul class="right hide-on-med-and-down nav-top-right-menu">
+            <li>
+                <a class="dropdown-button" data-constrainwidth="false" data-beloworigin="true" data-alignment="right" data-activates="notificationDropdown" href="javascript:;">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="circle-badge">{{notifications}}</span>
+                </a>
+                <ul id="notificationDropdown" class="dropdown-content notificationDropdown">
+                    <li>
+                        <a href="">
+                            You have {{notifications}} Notifications
+                        </a>
+                    </li>
+                    <li ng-repeat="list in notificationsList | limitTo:3">
+                        <a href="{{list.url}}">
+                            {{list.message}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            View All Notifications <i class="material-icons">forward</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-button" data-constrainwidth="false" data-beloworigin="true" data-alignment="right" data-activates="profileDropdwon" href="javascript:;">
+                    <img src="assets/images/profiles/3.jpg" class="profile-pic">
+                </a>
+                <ul id="profileDropdwon" class="dropdown-content profileDropdwon">
+                    <li class="user">
+                        <img src="assets/images/profiles/3.jpg" class="profile-pic">
+                        <p class="name">Judy Brown</p>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="">
+                            Messages <span class="new badge">4</span>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+            <li><a href=""><i class="material-icons">more_vert</i></a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
